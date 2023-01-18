@@ -1,0 +1,9 @@
+*.pyc
+**/*.pyc
+**.cache
+#**.github
+**.ipynb_checkpoints
+**.ipython
+**.jupyter
+**.local
+# **notebooks/demo/.ipynb_checkpoints
