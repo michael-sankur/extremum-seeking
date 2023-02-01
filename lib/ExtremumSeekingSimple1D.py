@@ -8,7 +8,7 @@ class ExtremumSeekingSimple1D():
     Class comments
     """
     
-    def __init__(self, time, dT, fes, aes, kint, mode="minimize", thetahat0=0, **kwargs):
+    def __init__(self, time, dT, fes, aes, kint, mode="minimize", thetahat0=None, **kwargs):
         
         self.name = ""
         if "name" in kwargs.keys():
@@ -59,7 +59,8 @@ class ExtremumSeekingSimple1D():
         self.theta = np.zeros((self.nc,len(time))) # ES control value
         
         # Initialize setpoint and control states
-        self.thetahat[0] = thetahat0 # initialize setpoint
+        if thetahat0 is not None:
+            self.thetahat[0] = thetahat0 # initialize setpoint
         
         self.theta[0] = self.thetahat[0] + self.aes*np.sin(self.wes*self.time[0]) # initialize control
 

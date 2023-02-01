@@ -36,10 +36,10 @@ class ObjectiveFunction():
     def get_measurements(self, kt):
 
         # stack system output measurements vertically
-        ytemp = np.zeros((1,1))
+        ytemp = np.zeros((0,1))
         for k1, sys in enumerate(self.sys_list):
             ytemp = np.vstack((ytemp, sys.y[:,kt:kt+1]))            
-        ytemp = ytemp[1:,:]
+        # ytemp = ytemp[1:,:]
         self.y[:,kt:kt+1] = ytemp
 
     # calculate objectice function value

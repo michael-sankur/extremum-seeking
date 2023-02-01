@@ -1,27 +1,24 @@
-# 2D Extremum Seeking Class
+# Extremum Seeking Class
 
-import numpy as np        
+import numpy as np
 
 
-class ExtremumSeekingSimple2D():
-    """
-    Class comments
-    """
+class ExtremumSeekingSimpleND():
     
-    def __init__(self, time, dT, fes, aes, kint, mode="minimize", thetahat0=None, **kwargs):
+    def __init__(self, time, dT, nc, fes, aes, kint, mode="minimize", thetahat0=None, **kwargs):
         
         self.name = ""
         if "name" in kwargs.keys():
             self.name = kwargs["name"]
         
-        self.nc = 2 # number of ES channels
+        self.nc = nc # number of ES channels
                 
         self.time = time # time array
         
         self.dT = dT # timestep
         
         # ES algorithm paramters                
-        self.fes = fes # ES sinusoidal modulation frequency [Hz]
+        self.fes = fes*np.ones(self.nc) # ES sinusoidal modulation frequency [Hz]
         self.wes = 2*np.pi*self.fes # ES sinusoidal modulation angular frequency
         
         self.aes = aes*np.ones(self.nc) # ES sinusoidal modulation amplitude (peak - zero)
@@ -57,11 +54,10 @@ class ExtremumSeekingSimple2D():
                 
         # Initialize setpoint and control states
         
-        if thetahat0 is not None:
+        if thetahat0 is not None:        
             self.thetahat[:,0:1] = np.asarray(thetahat0).reshape((self.nc,1))
         
-        self.theta[0,0] = self.thetahat[0,0] + self.aes[0]*np.cos(self.wes*self.time[0])
-        self.theta[1,0] = self.thetahat[1,0] + self.aes[1]*np.sin(self.wes*self.time[0])
+        self.theta[:,0] = self.thetahat[:,0] + self.aes*np.sin(self.wes*self.time[0])
         
 #     def get_measurements(self, y):
         
@@ -96,8 +92,7 @@ class ExtremumSeekingSimple2D():
             
         # ES controller algorithm
         if kt == 0:
-            self.theta[0,kt] = self.thetahat[0,kt] + self.aes[0]*np.cos(self.wes*self.time[kt])
-            self.theta[1,kt] = self.thetahat[1,kt] + self.aes[1]*np.sin(self.wes*self.time[kt])
+            self.theta[:,kt] = self.thetahat[:,kt] + self.aes*np.sin(self.wes*self.time[kt])
         elif kt >= 1:
 
             # no highpass filter
@@ -109,8 +104,7 @@ class ExtremumSeekingSimple2D():
             self.eps[:,kt] = self.psi[kt] - self.rho[:,kt]
 
             # demodulate
-            self.sigma[0,kt] = 2/self.aes[0]*np.cos(self.wes*self.time[kt])*self.rho[0,kt]
-            self.sigma[1,kt] = 2/self.aes[1]*np.sin(self.wes*self.time[kt])*self.rho[1,kt]
+            self.sigma[:,kt] = (2/self.aes)*np.sin(self.wes*self.time[kt])*self.rho[:,kt]
 
             # no lowpass filter
             self.xihat[:,kt] = self.sigma[:,kt]
@@ -126,7 +120,5 @@ class ExtremumSeekingSimple2D():
                 self.thetahat[:,kt] = self.thetahat[:,kt-1] + self.kint*self.dT*self.xihat[:,kt-1]
 
             # add probe to setpoint
-            self.theta[0,kt] = self.thetahat[0,kt] + self.aes[0]*np.cos(self.wes*self.time[kt])
-            self.theta[1,kt] = self.thetahat[1,kt] + self.aes[1]*np.sin(self.wes*self.time[kt])
+            self.theta[:,kt] = self.thetahat[:,kt] + self.aes*np.sin(self.wes*self.time[kt])
             
-                
