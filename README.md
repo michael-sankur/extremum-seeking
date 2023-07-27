@@ -64,12 +64,8 @@ The ES algorithm received the objective function value $\Psi$
 #### $\rho$: Changes in the objectuve function due to the perturbation
 The objective function value, $\Psi$, passes through a high-pass filter to remove low frequency content, such as changes in the objective function value due to changes in the setpoint. Changes in the objective function value due to the sinusoidal perturbation pass through the filter. The output of the high-pass filter is $\rho$:
 
-<!-- <center>
 Continuous representation: $\rho = \displaystyle \frac{s}{s + \omega_{h}} \Psi$
-$\quad$ | $\quad$ Discretized representation, indexed by $k$: $\rho_{k} = \left( 1 - T \omega_{h} \right) \rho_{k-1} + \Psi_{k} - \Psi_{k-1}$
-<!-- <center> Discretized representation, indexed by $k$: $\rho_{k} = \left( 1 - T \omega_{h} \right) \rho_{k-1} + \Psi_{k} - \Psi_{k-1}$ -->
-<!-- $\quad$ -->
-<!-- </center> -->
+Discretized representation, indexed by $k$: $\rho_{k} = \left( 1 - T \omega_{h} \right) \rho_{k-1} + \Psi_{k} - \Psi_{k-1}$
 
 \begin{aligned}
 \text{Continuous representation: } \rho = \displaystyle \frac{s}{s + \omega_{h}} \Psi \quad | \quad \text{Discretized representation, indexed by } k \text{: } \rho_{k} = \left( 1 - T \omega_{h} \right) \rho_{k-1} + \Psi_{k} - \Psi_{k-1}
