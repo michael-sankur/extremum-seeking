@@ -1,11 +1,13 @@
 # extremum-seeking
 
- Extremum Seeking (ES) is a model-free, online or offline, optimization algorithm that approximates gradient descent. ES estimates the gradient of a system by modulating the input to a system, then filtering and demodulation of an objective function value based on system output.
+Extremum Seeking (ES) is a model-free, online or offline, optimization algorithm that approximates gradient descent. ES estimates the gradient of a system by modulating the input to a system, then filtering and demodulation of an objective function value based on system output.
 
 This project contains three implementations of extremum seeking, meant to be plug-and-play into simulations or real-world applications: 1D-ES, 2D-ES, ND-ES (multi-dimensional). Multiple ES instances of any type can be used in conjunction. Jupyter notebooks contain several simulation examples of the ES implementations on static and dynamic systems.
 
 
 ## <center> ES Operation </center>
+
+This section covers the operation of a single 1D-ES algorithm.
 
 ES approximates gradient descent by steering its optimizer estimate, $\hat{\theta}$, with an estimate of the gradient of an objective function to $\hat{\theta}$.
 
@@ -28,7 +30,7 @@ The gradient estimate is integrated back into the setpoint (optimizer estimate),
 
 ## <center> Extremum Seeking Parameters </center>
 
-This section describes the parameters of an instance of 1D ES with sinusoidal perturbation.
+This section describes the parameters of an instance of 1D-ES with sinusoidal perturbation.
 
 ### Parameters for Simple ES
 
@@ -51,6 +53,8 @@ The low-pass filter frequency determines what frequency content passes through t
 
 
 ## <center> Inside the ES algorithm </center>
+
+This section details the inner workings of the ES algorithm.
 
 Here, we define $s$ as the Laplace variable, $k$ as the index for discretized equations, and $T$ as the discretized timestep. Discretized representations are done using the ZOH method, for display simplicity, where $z = \exp \left( s T \right)$ is approximated by $z \approx 1 + s T$ and $s \approx T^{-1} \left(z - 1 \right)$.
 
@@ -136,6 +140,8 @@ $\quad$
 
 
 ## <center> Extremum Seeking Gradient Estimation </center>
+
+This section gives a derivation of how the gradient is estimated by ES.
 
 Here, we take advantage of second order Taylor Expansion: where $f(b) \approx f (a) + \displaystyle \left. \frac{df}{dx} \right|_{x = a} \left( b - a \right) + \left. \frac{1}{2} \frac{d^{2}f}{dx^{2}} \right|_{x = a} \left( b - a \right)^{2}$
 
