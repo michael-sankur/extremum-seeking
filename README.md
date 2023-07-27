@@ -124,27 +124,29 @@ Continuous representation: $\hat{\xi} = \displaystyle \frac{\omega_{l}}{s + \ome
 #### $\hat{\theta}$: Setpoint
 The ES algotrithm then integrates its gradient estimate, scaled by a gain $b$, to update its setpoint $\hat{\theta}$. Positive values of $b$ are used to maximize $\Psi$, and negative values of $b$ are used to minimize $\Psi$ :
 
-<!-- <center> Continuous representation: $\hat{\theta} = \displaystyle \pm \frac{b}{s} \hat{\xi}$ $\quad$ | $\quad$ Discretized representation, indexed by $k$: $\hat{\theta}_{k} = \hat{\theta}_{k-1} \pm \displaystyle b T \hat{\xi}_{k-1}$
-<center> Discretized representation, indexed by $k$: $\hat{\theta}_{k} = \hat{\theta}_{k-1} \pm \displaystyle b T \hat{\xi}_{k-1}$
-$\quad$
-</center> -->
+<p align="center">
+Continuous representation: $\hat{\theta} = \displaystyle \pm \frac{b}{s} \hat{\xi}$ $\quad$ | $\quad$ Discretized representation, indexed by $k$: $\hat{\theta}_{k} = \hat{\theta}_{k-1} \pm \displaystyle b T \hat{\xi}_{k-1}$
+</p>
 
+<!--
 \begin{aligned}
 \text{Continuous representation: } \hat{\theta} = \displaystyle \pm \frac{b}{s} \hat{\xi} \quad | \quad \text{Discretized representation, indexed by } k \text{: } \hat{\theta}_{k} = \hat{\theta}_{k-1} \pm \displaystyle b T \hat{\xi}_{k-1}
 \end{aligned}
+-->
 
 
 #### $\theta$: Control
 The ES algotrithm adds the perturbation to its setpointto update its setpoint $\hat{\theta}$, giving the control value, $\theta$:
 
-<!-- <center> Continuous representation: $\theta = \hat{\theta} + a \sin \left( \omega t \right)$ $\quad$ | $\quad$ Discretized representation, indexed by $k$: $\theta_{k} = \hat{\theta}_{k} + a \sin \left( \omega k T \right)$
-<center> Discretized representation, indexed by $k$: $\hat{\theta}_{k} = \hat{\theta}_{k-1} \pm \displaystyle b T \hat{\xi}_{k-1}$
-$\quad$
-</center> -->
+<p align="center">
+  Continuous representation: $\theta = \hat{\theta} + a \sin \left( \omega t \right)$ $\quad$ | $\quad$ Discretized representation, indexed by $k$: $\theta_{k} = \hat{\theta}_{k} + a \sin \left( \omega k T \right)$
+</p>
 
+<!--
 \begin{aligned}
 \text{Continuous representation: } \theta = \hat{\theta} + a \sin \left( \omega t \right) \quad | \quad \text{Discretized representation, indexed by } k \text{: } \theta_{k} = \hat{\theta}_{k} + a \sin \left( \omega k T \right)
 \end{aligned}
+-->
 
 
 ## <center> Extremum Seeking Gradient Estimation </center>
