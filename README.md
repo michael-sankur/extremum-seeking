@@ -82,20 +82,22 @@ A pertinent value is $\epsilon$, which is the difference between the objective f
 
 <p align="center">
 Continuous representation: $\epsilon = \Psi - \rho$
-$\quad$ | $\quad$
+$\quad | \quad$
 Discretized representation, indexed by $k$: $\epsilon_{k} = \Psi_{k} - \rho_{k}$
 </p>
 
+<!--
 \begin{aligned}
 \text{Continuous representation: } \epsilon = \Psi - \rho \quad | \quad \text{Discretized representation, indexed by } k \text{: } \epsilon_{k} = \Psi_{k} - \rho_{k}
 \end{aligned}
+-->
 
 #### $\sigma$: Demodulated value
 The high-pass filtered objective function value $\rho$ then is demodulated by multiplying it by the sinusoidal perturbation, and dividing by the perturbation ampltiude, giving $\sigma$:
 
 <p align="center">
 Continuous representation: $\sigma = \displaystyle \frac{2}{a} \sin \left( \omega t \right) \rho$
-$\quad$ | $\quad$
+$\quad | \quad$
 Discretized representation, indexed by $k$: $\sigma_{k} = \displaystyle \frac{2}{a} \sin \left( \omega k T \right) \rho_{k}$
 </p>
 
@@ -109,14 +111,15 @@ Discretized representation, indexed by $k$: $\sigma_{k} = \displaystyle \frac{2}
 #### $\hat{\xi}$: Gradient Estimate
 The demodulated value passes through a low-pass filter to remove sinsoidal and other high frequency content, giving an estimate of the gradient of the objective function $\Psi$ with respect to the setpoint $\hat{\theta}$, $\hat{\xi}$:
 
-<!-- <center> Continuous representation: $\hat{\xi} = \displaystyle \frac{\omega_{l}}{s + \omega_{l}} \sigma$ $\quad$ | $\quad$ Discretized representation, indexed by $k$: $\hat{\xi}_{k} = \left( 1 - T \omega_{l} \right) \hat{\xi}_{k-1} + T \omega_{l} \sigma_{k-1}$
-<center> Discretized representation, indexed by $k$: $\hat{\xi}_{k} = \left( 1 - T \omega_{l} \right) \hat{\xi}_{k-1} + T \omega_{l} \sigma_{k-1}$
-$\quad$
-</center> -->
+<p align="center">
+Continuous representation: $\hat{\xi} = \displaystyle \frac{\omega_{l}}{s + \omega_{l}} \sigma$ $\quad$ | $\quad$ Discretized representation, indexed by $k$: $\hat{\xi}_{k} = \left( 1 - T \omega_{l} \right) \hat{\xi}_{k-1} + T \omega_{l} \sigma_{k-1}$
+</p>
 
+<!--
 \begin{aligned}
 \text{Continuous representation: } \hat{\xi} = \displaystyle \frac{\omega_{l}}{s + \omega_{l}} \sigma \quad | \quad \text{Discretized representation, indexed by } k \text{: } \hat{\xi}_{k} = \left( 1 - T \omega_{l} \right) \hat{\xi}_{k-1} + T \omega_{l} \sigma_{k-1}
 \end{aligned}
+-->
 
 #### $\hat{\theta}$: Setpoint
 The ES algotrithm then integrates its gradient estimate, scaled by a gain $b$, to update its setpoint $\hat{\theta}$. Positive values of $b$ are used to maximize $\Psi$, and negative values of $b$ are used to minimize $\Psi$ :
