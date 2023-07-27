@@ -70,19 +70,21 @@ $\quad | \quad$
 Discretized representation, indexed by $k$: $\rho_{k} = \left( 1 - T \omega_{h} \right) \rho_{k-1} + \Psi_{k} - \Psi_{k-1}$
 </p>
 
+<!--
 \begin{aligned}
 \text{Continuous representation: } \rho = \displaystyle \frac{s}{s + \omega_{h}} \Psi \quad | \quad \text{Discretized representation, indexed by } k \text{: } \rho_{k} = \left( 1 - T \omega_{h} \right) \rho_{k-1} + \Psi_{k} - \Psi_{k-1}
 \end{aligned}
+-->
 
 
 #### $\epsilon$: Changes in the objective function due to the setpoint
 A pertinent value is $\epsilon$, which is the difference between the objective function value and the output of the high-pass filter. This can be viewed as the objective function component due to the setpoint $\hat{\theta}$:
 
-<!-- <center>
-Continuous representation: $\epsilon = \Psi - \rho$ $\quad$ | $\quad$ Discretized representation, indexed by $k$: $\epsilon_{k} = \Psi_{k} - \rho_{k}$
-<center> Discretized representation, indexed by $k$: $\epsilon_{k} = \Psi_{k} - \rho_{k}$
-$\quad$
-</center> -->
+<p align="center">
+Continuous representation: $\epsilon = \Psi - \rho$
+$\quad$ | $\quad$
+Discretized representation, indexed by $k$: $\epsilon_{k} = \Psi_{k} - \rho_{k}$
+</p>
 
 \begin{aligned}
 \text{Continuous representation: } \epsilon = \Psi - \rho \quad | \quad \text{Discretized representation, indexed by } k \text{: } \epsilon_{k} = \Psi_{k} - \rho_{k}
@@ -91,14 +93,17 @@ $\quad$
 #### $\sigma$: Demodulated value
 The high-pass filtered objective function value $\rho$ then is demodulated by multiplying it by the sinusoidal perturbation, and dividing by the perturbation ampltiude, giving $\sigma$:
 
-<!-- <center> Continuous representation: $\sigma = \displaystyle \frac{2}{a} \sin \left( \omega t \right) \rho$ $\quad$ | $\quad$ Discretized representation, indexed by $k$: $\sigma_{k} = \displaystyle \frac{2}{a} \sin \left( \omega k T \right) \rho_{k}$
-<center> Discretized representation, indexed by $k$: $\sigma_{k} = \displaystyle \frac{2}{a} \sin \left( \omega k T \right) \rho_{k}$
-$\quad$
-</center> -->
+<p align="center">
+Continuous representation: $\sigma = \displaystyle \frac{2}{a} \sin \left( \omega t \right) \rho$
+$\quad$ | $\quad$
+Discretized representation, indexed by $k$: $\sigma_{k} = \displaystyle \frac{2}{a} \sin \left( \omega k T \right) \rho_{k}$
+</p>
 
+<!--
 \begin{aligned}
 \text{Continuous representation:  } \sigma = \displaystyle \frac{2}{a} \sin \left( \omega t \right) \rho \quad | \quad \text{Discretized representation, indexed by } k \text{:  } \sigma_{k} = \displaystyle \frac{2}{a} \sin \left( \omega k T \right) \rho_{k}
 \end{aligned}
+-->
 
 
 #### $\hat{\xi}$: Gradient Estimate
