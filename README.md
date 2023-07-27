@@ -25,3 +25,26 @@ A low-pass filter removes high-frequency content from this value, giving the gra
 
 The gradient estimate is integrated back into the setpoint (optimizer estimate), updating $\hat{\theta}$.
 
+
+## <center> Extremum Seeking Parameters </center>
+
+This section describes the parameters of an instance of 1D ES with sinusoidal perturbation.
+
+### Parameters for Simple ES
+
+#### Perturbation Frequency: $f$ [Hz]
+The perturbation frequency $f$ determines how fast the sinusoidal perturbation cycles. This is converted into an angular frequency $\omega = 2 \pi f$.
+
+#### Perturbation Amplitude: $a$
+The perturbation amplitude $a$ determines how far into the search space the perturbation reaches. Larger values tend to provide faster convergence to an optimizer, as the ES can assess more of the search space. Smaller values may provide slower convergence to an optimizer, but the control value will remain closer to the optimizer after convergence.
+
+#### Integrator Gain: $b$
+The integerator gain $b$ determines how far the ES algorithm will move in the direction of the gradient estimate. This value essentially scales the gradient estimate. This value can be though of as similar to the step size in gradient descent. Larger values generally provide faster convergence to an optimizer, but may lead to instability.
+
+### Parameters for Advanced ES
+
+#### High-pass filter frequency: $\omega_h$
+The high-pass filter frequency determines what frequency content passes through the high-pass filter. This value is typically set to $\omega_{h} = 0.1 \omega$, and SimpleES classes default to this value.
+
+#### Low-pass filter frequency: $\omega_l$
+The low-pass filter frequency determines what frequency content passes through the low-pass filter. The low-pass filter attenuates content in the demodulated signal, and typically is used to attenuate content such as that due to the perturbation. This value is typically set to $\omega_{l} = 0.1 \omega$, and SimpleES classes default to this value.
