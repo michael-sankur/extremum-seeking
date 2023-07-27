@@ -157,47 +157,49 @@ Here, we take advantage of second order Taylor Expansion: where $f(b) \approx f 
 
 Using a first order Taylor Expansion, the objective function can be expressed in two parts, a portion due to the setpoint, and a portion due to the perturbation:
 
-<!-- <center>
+<p align="center">
 $\Psi ( \theta ) \approx \Psi ( \hat{\theta} ) + \displaystyle \left. \frac{d \Psi}{d \theta} \right|_{\theta = \hat{\theta}} \left( \theta - \hat{\theta} \right) = \Psi ( \hat{\theta} ) + \displaystyle \left. \frac{d \Psi}{d \theta} \right|_{\theta = \hat{\theta}} a \sin \left( \omega t \right)$
-$\quad$
-</center> -->
+</p>
 
+<!--
 \begin{aligned}
 \Psi ( \theta ) \approx \Psi ( \hat{\theta} ) + \displaystyle \left. \frac{d \Psi}{d \theta} \right|_{\theta = \hat{\theta}} \left( \theta - \hat{\theta} \right) = \Psi ( \hat{\theta} ) + \displaystyle \left. \frac{d \Psi}{d \theta} \right|_{\theta = \hat{\theta}} a \sin \left( \omega t \right)
 \end{aligned}
+-->
 
 The high-pass filter removes "slow" and low frequency content, such as the portion of the objective function due to the setpoint:
 
-<!-- <center>
+<p align="center">
 $\rho \approx \displaystyle \left. \frac{d \Psi}{d \theta} \right|_{\theta = \hat{\theta}} a \sin \left( \omega t \right)$
-$\quad$
-</center> -->
+</p>
 
+<!--
 \begin{aligned}
 \rho \approx \displaystyle \left. \frac{d \Psi}{d \theta} \right|_{\theta = \hat{\theta}} a \sin \left( \omega t \right)
 \end{aligned}
-
-
+-->
 
 This signal is demodulated by multiplying by $\displaystyle \frac{2}{a} \sin \omega t$. The term $sin^{2}$ has a steady state and sinusoidal component:
 
-<!-- <center>
+<p align="center">
 $\sigma \approx 2 \displaystyle \left. \frac{d \Psi}{d \theta} \right|_{\theta = \hat{\theta}} \sin^{2} \left( \omega t \right) = \displaystyle \left. \frac{d \Psi}{d \theta} \right|_{\theta = \hat{\theta}} \left( 1 - \cos \left( 2 \omega t \right) \right)$
-$\quad$
-</center> -->
+</p>
 
+<!--
 \begin{aligned}
 \sigma \approx 2 \displaystyle \left. \frac{d \Psi}{d \theta} \right|_{\theta = \hat{\theta}} \sin^{2} \left( \omega t \right) = \displaystyle \left. \frac{d \Psi}{d \theta} \right|_{\theta = \hat{\theta}} \left( 1 - \cos \left( 2 \omega t \right) \right)
 \end{aligned}
+-->
 
 This low-pass filter removes the sinusoidal component from the demodulated signal, leaving an estimate of the gradient of the objective function with respect to the setpoint:
 
-<!-- <center>
+<p align="center">
 $\hat{\xi} \approx \displaystyle \left. \frac{d \Psi}{d \theta} \right|_{\theta = \hat{\theta}}$
-$\quad$
-</center> -->
+</p>
 
+<!--
 \begin{aligned}
 \hat{\xi} \approx \displaystyle \left. \frac{d \Psi}{d \theta} \right|_{\theta = \hat{\theta}}
 \end{aligned}
+-->
 
