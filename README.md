@@ -22,12 +22,14 @@ ES approximates gradient descent by steering its optimizer estimate, $\hat{\thet
 </figure>
 </p>
 
+<center>
 <figure style="text-align:center">
 <img src="./images/ES_1D_name.png" width="900" alt="1D ES with element descriptions"/>
 <figcaption>1D ES with element descriptions.</figcaption>
 <img src="./images/ES_1D_frac.png" width="900" alt="1D ES with element equations"/>
 <figcaption style="text-align:center">1D ES with element equations.</figcaption>
 </figure>
+</center>
 
 ES operates as follows:
 
