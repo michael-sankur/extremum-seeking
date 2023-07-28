@@ -16,7 +16,7 @@ ES approximates gradient descent by steering its optimizer estimate, $\hat{\thet
 <!-- <img src="./images/ES_1D_frac.png" width="900" title="1D ES"> -->
 <figure style="text-align:center">
 <img src="./images/ES_1D_name.png" width="900" alt="1D ES with element descriptions"/>
-<figcaption>1D ES with element descriptions.</figcaption>
+<figcaption style="text-align:center">1D ES with element descriptions.</figcaption>
 <!-- <img src="./images/ES_1D_frac.png" width="900" alt="1D ES with element equations"/> -->
 <!-- <figcaption>1D ES with element equations.</figcaption> -->
 </figure>
