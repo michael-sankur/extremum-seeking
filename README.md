@@ -11,25 +11,12 @@ This section covers the operation of a single 1D-ES algorithm.
 
 ES approximates gradient descent by steering its optimizer estimate, $\hat{\theta}$, with an estimate of the gradient of an objective function to $\hat{\theta}$.
 
-<p align="center" style="text-align:center">
-<!-- <img src="./images/ES_1D_name.png" width="900" title="1D ES"> -->
-<!-- <img src="./images/ES_1D_frac.png" width="900" title="1D ES"> -->
-<figure style="text-align:center">
-<img src="./images/ES_1D_name.png" width="900" alt="1D ES with element descriptions"/>
-<figcaption style="text-align:center">1D ES with element descriptions.</figcaption>
-<!-- <img src="./images/ES_1D_frac.png" width="900" alt="1D ES with element equations"/> -->
-<!-- <figcaption>1D ES with element equations.</figcaption> -->
-</figure>
-</p>
-
-<center>
 <figure style="text-align:center">
 <img src="./images/ES_1D_name.png" width="900" alt="1D ES with element descriptions"/>
 <figcaption>1D ES with element descriptions.</figcaption>
 <img src="./images/ES_1D_frac.png" width="900" alt="1D ES with element equations"/>
 <figcaption style="text-align:center">1D ES with element equations.</figcaption>
 </figure>
-</center>
 
 ES operates as follows:
 
@@ -75,6 +62,13 @@ The low-pass filter frequency determines what frequency content passes through t
 ## <center> Inside the ES algorithm </center>
 
 This section details the inner workings of the ES algorithm.
+
+<figure style="text-align:center">
+<img src="./images/ES_1D_name.png" width="900" alt="1D ES with element descriptions"/>
+<figcaption>1D ES with element descriptions.</figcaption>
+<img src="./images/ES_1D_frac.png" width="900" alt="1D ES with element equations"/>
+<figcaption style="text-align:center">1D ES with element equations.</figcaption>
+</figure>
 
 Here, we define $s$ as the Laplace variable, $k$ as the index for discretized equations, and $T$ as the discretized timestep. Discretized representations are done using the ZOH method, for display simplicity, where $z = \exp \left( s T \right)$ is approximated by $z \approx 1 + s T$ and $s \approx T^{-1} \left(z - 1 \right)$.
 
