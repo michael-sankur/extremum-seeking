@@ -75,13 +75,6 @@ $\quad | \quad$
 Discretized representation, indexed by $k$: $\rho_{k} = \left( 1 - T \omega_{h} \right) \rho_{k-1} + \Psi_{k} - \Psi_{k-1}$
 </p>
 
-<!--
-\begin{aligned}
-\text{Continuous representation: } \rho = \displaystyle \frac{s}{s + \omega_{h}} \Psi \quad | \quad \text{Discretized representation, indexed by } k \text{: } \rho_{k} = \left( 1 - T \omega_{h} \right) \rho_{k-1} + \Psi_{k} - \Psi_{k-1}
-\end{aligned}
--->
-
-
 #### $\epsilon$: Changes in the objective function due to the setpoint
 A pertinent value is $\epsilon$, which is the difference between the objective function value and the output of the high-pass filter. This can be viewed as the objective function component due to the setpoint $\hat{\theta}$:
 
@@ -91,27 +84,14 @@ $\quad | \quad$
 Discretized representation, indexed by $k$: $\epsilon_{k} = \Psi_{k} - \rho_{k}$
 </p>
 
-<!--
-\begin{aligned}
-\text{Continuous representation: } \epsilon = \Psi - \rho \quad | \quad \text{Discretized representation, indexed by } k \text{: } \epsilon_{k} = \Psi_{k} - \rho_{k}
-\end{aligned}
--->
-
 #### $\sigma$: Demodulated value
-The high-pass filtered objective function value $\rho$ then is demodulated by multiplying it by the sinusoidal perturbation, and dividing by the perturbation ampltiude, giving $\sigma$:
+The high-pass filtered objective function value $\rho$ then is demodulated by multiplying it by the sinusoidal perturbation scaled by $\frac{2}{a}, giving $\sigma$:
 
 <p align="center">
 Continuous representation: $\sigma = \displaystyle \frac{2}{a} \sin \left( \omega t \right) \rho$
 $\quad | \quad$
 Discretized representation, indexed by $k$: $\sigma_{k} = \displaystyle \frac{2}{a} \sin \left( \omega k T \right) \rho_{k}$
 </p>
-
-<!--
-\begin{aligned}
-\text{Continuous representation:  } \sigma = \displaystyle \frac{2}{a} \sin \left( \omega t \right) \rho \quad | \quad \text{Discretized representation, indexed by } k \text{:  } \sigma_{k} = \displaystyle \frac{2}{a} \sin \left( \omega k T \right) \rho_{k}
-\end{aligned}
--->
-
 
 #### $\hat{\xi}$: Gradient Estimate
 The demodulated value passes through a low-pass filter to remove sinsoidal and other high frequency content, giving an estimate of the gradient of the objective function $\Psi$ with respect to the setpoint $\hat{\theta}$, $\hat{\xi}$:
@@ -120,12 +100,6 @@ The demodulated value passes through a low-pass filter to remove sinsoidal and o
 Continuous representation: $\hat{\xi} = \displaystyle \frac{\omega_{l}}{s + \omega_{l}} \sigma$ $\quad$ | $\quad$ Discretized representation, indexed by $k$: $\hat{\xi}_{k} = \left( 1 - T \omega_{l} \right) \hat{\xi}_{k-1} + T \omega_{l} \sigma_{k-1}$
 </p>
 
-<!--
-\begin{aligned}
-\text{Continuous representation: } \hat{\xi} = \displaystyle \frac{\omega_{l}}{s + \omega_{l}} \sigma \quad | \quad \text{Discretized representation, indexed by } k \text{: } \hat{\xi}_{k} = \left( 1 - T \omega_{l} \right) \hat{\xi}_{k-1} + T \omega_{l} \sigma_{k-1}
-\end{aligned}
--->
-
 #### $\hat{\theta}$: Setpoint
 The ES algotrithm then integrates its gradient estimate, scaled by a gain $b$, to update its setpoint $\hat{\theta}$. Positive values of $b$ are used to maximize $\Psi$, and negative values of $b$ are used to minimize $\Psi$ :
 
@@ -133,26 +107,12 @@ The ES algotrithm then integrates its gradient estimate, scaled by a gain $b$, t
 Continuous representation: $\hat{\theta} = \displaystyle \pm \frac{b}{s} \hat{\xi}$ $\quad$ | $\quad$ Discretized representation, indexed by $k$: $\hat{\theta}_{k} = \hat{\theta}_{k-1} \pm \displaystyle b T \hat{\xi}_{k-1}$
 </p>
 
-<!--
-\begin{aligned}
-\text{Continuous representation: } \hat{\theta} = \displaystyle \pm \frac{b}{s} \hat{\xi} \quad | \quad \text{Discretized representation, indexed by } k \text{: } \hat{\theta}_{k} = \hat{\theta}_{k-1} \pm \displaystyle b T \hat{\xi}_{k-1}
-\end{aligned}
--->
-
-
 #### $\theta$: Control
 The ES algotrithm adds the perturbation to its setpointto update its setpoint $\hat{\theta}$, giving the control value, $\theta$:
 
 <p align="center">
   Continuous representation: $\theta = \hat{\theta} + a \sin \left( \omega t \right)$ $\quad$ | $\quad$ Discretized representation, indexed by $k$: $\theta_{k} = \hat{\theta}_{k} + a \sin \left( \omega k T \right)$
 </p>
-
-<!--
-\begin{aligned}
-\text{Continuous representation: } \theta = \hat{\theta} + a \sin \left( \omega t \right) \quad | \quad \text{Discretized representation, indexed by } k \text{: } \theta_{k} = \hat{\theta}_{k} + a \sin \left( \omega k T \right)
-\end{aligned}
--->
-
 
 ## <center> Extremum Seeking Gradient Estimation </center>
 
@@ -166,23 +126,11 @@ Using a first order Taylor Expansion, the objective function can be expressed in
 $\Psi ( \theta ) \approx \Psi ( \hat{\theta} ) + \displaystyle \left. \frac{d \Psi}{d \theta} \right|_{\theta = \hat{\theta}} \left( \theta - \hat{\theta} \right) = \Psi ( \hat{\theta} ) + \displaystyle \left. \frac{d \Psi}{d \theta} \right|_{\theta = \hat{\theta}} a \sin \left( \omega t \right)$
 </p>
 
-<!--
-\begin{aligned}
-\Psi ( \theta ) \approx \Psi ( \hat{\theta} ) + \displaystyle \left. \frac{d \Psi}{d \theta} \right|_{\theta = \hat{\theta}} \left( \theta - \hat{\theta} \right) = \Psi ( \hat{\theta} ) + \displaystyle \left. \frac{d \Psi}{d \theta} \right|_{\theta = \hat{\theta}} a \sin \left( \omega t \right)
-\end{aligned}
--->
-
 The high-pass filter removes "slow" and low frequency content, such as the portion of the objective function due to the setpoint:
 
 <p align="center">
 $\rho \approx \displaystyle \left. \frac{d \Psi}{d \theta} \right|_{\theta = \hat{\theta}} a \sin \left( \omega t \right)$
 </p>
-
-<!--
-\begin{aligned}
-\rho \approx \displaystyle \left. \frac{d \Psi}{d \theta} \right|_{\theta = \hat{\theta}} a \sin \left( \omega t \right)
-\end{aligned}
--->
 
 This signal is demodulated by multiplying by $\displaystyle \frac{2}{a} \sin \omega t$. The term $sin^{2}$ has a steady state and sinusoidal component:
 
@@ -190,21 +138,8 @@ This signal is demodulated by multiplying by $\displaystyle \frac{2}{a} \sin \om
 $\sigma \approx 2 \displaystyle \left. \frac{d \Psi}{d \theta} \right|_{\theta = \hat{\theta}} \sin^{2} \left( \omega t \right) = \displaystyle \left. \frac{d \Psi}{d \theta} \right|_{\theta = \hat{\theta}} \left( 1 - \cos \left( 2 \omega t \right) \right)$
 </p>
 
-<!--
-\begin{aligned}
-\sigma \approx 2 \displaystyle \left. \frac{d \Psi}{d \theta} \right|_{\theta = \hat{\theta}} \sin^{2} \left( \omega t \right) = \displaystyle \left. \frac{d \Psi}{d \theta} \right|_{\theta = \hat{\theta}} \left( 1 - \cos \left( 2 \omega t \right) \right)
-\end{aligned}
--->
-
 This low-pass filter removes the sinusoidal component from the demodulated signal, leaving an estimate of the gradient of the objective function with respect to the setpoint:
 
 <p align="center">
 $\hat{\xi} \approx \displaystyle \left. \frac{d \Psi}{d \theta} \right|_{\theta = \hat{\theta}}$
 </p>
-
-<!--
-\begin{aligned}
-\hat{\xi} \approx \displaystyle \left. \frac{d \Psi}{d \theta} \right|_{\theta = \hat{\theta}}
-\end{aligned}
--->
-
