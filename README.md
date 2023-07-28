@@ -11,7 +11,7 @@ This section covers the operation of a single 1D-ES algorithm.
 
 ES approximates gradient descent by steering its optimizer estimate, $\hat{\theta}$, with an estimate of the gradient of an objective function to $\hat{\theta}$.
 
-<p align="center">
+<p align="center" style="text-align:center">
 <!-- <img src="./images/ES_1D_name.png" width="900" title="1D ES"> -->
 <!-- <img src="./images/ES_1D_frac.png" width="900" title="1D ES"> -->
 <figure style="text-align:center">
