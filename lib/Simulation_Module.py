@@ -18,8 +18,8 @@ class Simulation():
         
         # self.input_mapping = input_mapping
         
-        # mapping definig which objective function each ES controller in this simulation will minimize/maximize
-        # indices of obj_to_es_map represent the ES controller, and values represent the objective funciton
+        # mapping defining which objective function each ES controller in this simulation will minimize/maximize
+        # indices of obj_to_es_map represent the ES controller, and values represent the objective function
         # example: [0, 0] means that two ES controllers receive and operate on a single objective function
         # example: [0, 1] means that ES controller 0 receives objective function 0, and ES controller 1 receives objective function 1
         # example: [0, 0, 1] means that ES controllers 0 and 1 receive objective function 0, and ES controller 2 receives objective function 1

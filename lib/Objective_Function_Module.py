@@ -12,7 +12,7 @@ class ObjectiveFunction():
         
         self.ystar = ystar # reference signal
         
-        self.psi = np.zeros(len(self.time)) # objectice function value
+        self.psi = np.zeros(len(self.time)) # objective function value
         
         self.sys_list = None # list of systems
         
@@ -42,13 +42,13 @@ class ObjectiveFunction():
         # ytemp = ytemp[1:,:]
         self.y[:,kt:kt+1] = ytemp
 
-    # calculate objectice function value
+    # calculate objective function value
     def compute_objective_function(self, kt):
 
-        # if no refernce signal, calculate objective function value assuming refernce of 0 for all outputs
+        # if no reference signal, calculate objective function value assuming reference of 0 for all outputs
         if self.ystar is None:
             self.psi[kt] = self.objective_function(self.y[:,kt])
-        # if refernce signal exists, calculate objective function value
+        # if reference signal exists, calculate objective function value
         else:
             if self.ystar.ndim == 1:
                 self.psi[kt] = self.objective_function(self.y[:,kt], self.ystar[kt])

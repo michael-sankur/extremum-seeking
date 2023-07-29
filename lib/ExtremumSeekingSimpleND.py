@@ -17,7 +17,7 @@ class ExtremumSeekingSimpleND():
         
         self.dT = dT # timestep
         
-        # ES algorithm paramters                
+        # ES algorithm parameters                
         self.fes = fes*np.ones(self.nc) # ES sinusoidal modulation frequency [Hz]
         self.wes = 2*np.pi*self.fes # ES sinusoidal modulation angular frequency
         

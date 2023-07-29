@@ -20,7 +20,7 @@ class ExtremumSeekingSimple1D():
         
         self.dT = dT # timestep
         
-        # ES algorithm probing and signal processing paramters
+        # ES algorithm probing and signal processing parameters
         self.fes = fes # ES sinusoidal modulation frequency [Hz]
         self.wes = 2*np.pi*self.fes # ES sinusoidal modulation angular frequency
         
