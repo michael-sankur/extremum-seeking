@@ -81,8 +81,6 @@ The objective function value, $\Psi$, passes through a high-pass filter to remov
 <p align="center">
 Continuous representation: $\rho = \displaystyle \frac{s}{s + \omega_{h}} \Psi$
 $\quad | \quad$
-<!-- </p> -->
-<!-- <p align="center"> -->
 Discretized representation: $\rho_{k} = \left( 1 - T \omega_{h} \right) \rho_{k-1} + \Psi_{k} - \Psi_{k-1}$
 </p>
 
@@ -91,9 +89,7 @@ A pertinent value is $\epsilon$, which is the difference between the objective f
 
 <p align="center">
 Continuous representation: $\epsilon = \Psi - \rho$
-<!-- $\quad | \quad$ -->
-</p>
-<p align="center">
+$\quad | \quad$
 Discretized representation: $\epsilon_{k} = \Psi_{k} - \rho_{k}$
 </p>
 
@@ -102,9 +98,7 @@ The high-pass filtered objective function value $\rho$ then is demodulated by mu
 
 <p align="center">
 Continuous representation: $\sigma = \displaystyle \frac{2}{a} \sin \left( \omega t \right) \rho$
-<!-- $\quad | \quad$ -->
-</p>
-<p align="center">
+$\quad | \quad$
 Discretized representation: $\sigma_{k} = \displaystyle \frac{2}{a} \sin \left( \omega k T \right) \rho_{k}$
 </p>
 
@@ -113,9 +107,7 @@ The demodulated value passes through a low-pass filter to remove sinsoidal and o
 
 <p align="center">
 Continuous representation: $\hat{\xi} = \displaystyle \frac{\omega_{l}}{s + \omega_{l}} \sigma$
-<!-- $\quad$ | $\quad$ -->
-</p>
-<p align="center">
+$\quad$ | $\quad$
 Discretized representation: $\hat{\xi}_{k} = \left( 1 - T \omega_{l} \right) \hat{\xi}_{k-1} + T \omega_{l} \sigma_{k-1}$
 </p>
 
@@ -124,9 +116,7 @@ The ES algotrithm then integrates its gradient estimate, scaled by a gain $b$, t
 
 <p align="center">
 Continuous representation: $\hat{\theta} = \displaystyle \pm \frac{b}{s} \hat{\xi}$
-<!-- $\quad$ | $\quad$ -->
-</p>
-<p align="center">
+$\quad$ | $\quad$
 Discretized representation: $\hat{\theta}_{k} = \hat{\theta}_{k-1} \pm \displaystyle b T \hat{\xi}_{k-1}$
 </p>
 
@@ -134,7 +124,9 @@ Discretized representation: $\hat{\theta}_{k} = \hat{\theta}_{k-1} \pm \displays
 The ES algotrithm adds the perturbation to its setpointto update its setpoint $\hat{\theta}$, giving the control value, $\theta$:
 
 <p align="center">
-Continuous representation: $\theta = \hat{\theta} + a \sin \left( \omega t \right)$ $\quad$ | $\quad$ Discretized representation: $\theta_{k} = \hat{\theta}_{k} + a \sin \left( \omega k T \right)$
+Continuous representation: $\theta = \hat{\theta} + a \sin \left( \omega t \right)$
+$\quad$ | $\quad$
+Discretized representation: $\theta_{k} = \hat{\theta}_{k} + a \sin \left( \omega k T \right)$
 </p>
 
 ## <center> Extremum Seeking Gradient Estimation </center>
