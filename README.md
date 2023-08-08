@@ -81,7 +81,8 @@ The objective function value, $\Psi$, passes through a high-pass filter to remov
 <p align="center">
 Continuous representation: $\rho = \displaystyle \frac{s}{s + \omega_{h}} \Psi$
 <!-- $\quad | \quad$ -->
-\\
+</p>
+<p align="center">
 Discretized representation, indexed by $k$: $\rho_{k} = \left( 1 - T \omega_{h} \right) \rho_{k-1} + \Psi_{k} - \Psi_{k-1}$
 </p>
 
