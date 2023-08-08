@@ -133,7 +133,10 @@ Discretized representation: $\theta_{k} = \hat{\theta}_{k} + a \sin \left( \omeg
 
 This section gives a derivation of how the gradient is estimated by ES.
 
-Here, we take advantage of second order Taylor Expansion: where $$f(b) \approx f (a) + \displaystyle \left. \frac{df}{dx} \right|_{x = a} \left( b - a \right) + \left. \frac{1}{2} \frac{d^{2}f}{dx^{2}} \right|_{x = a} \left( b - a \right)^{2}$$
+Here, we take advantage of second order Taylor Expansion, where:
+<p align="center">
+$f(b) \approx f (a) + \displaystyle \left. \frac{df}{dx} \right|_{x = a} \left( b - a \right) + \left. \frac{1}{2} \frac{d^{2}f}{dx^{2}} \right|_{x = a} \left( b - a \right)^{2}$
+</p>
 
 Using a first order Taylor Expansion, the objective function can be expressed in two parts, a portion due to the setpoint, and a portion due to the perturbation:
 
