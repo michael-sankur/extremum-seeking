@@ -80,7 +80,8 @@ The objective function value, $\Psi$, passes through a high-pass filter to remov
 
 <p align="center">
 Continuous representation: $\rho = \displaystyle \frac{s}{s + \omega_{h}} \Psi$
-$\quad | \quad$
+<!-- $\quad | \quad$ -->
+\\
 Discretized representation, indexed by $k$: $\rho_{k} = \left( 1 - T \omega_{h} \right) \rho_{k-1} + \Psi_{k} - \Psi_{k-1}$
 </p>
 
@@ -120,7 +121,7 @@ Continuous representation: $\hat{\theta} = \displaystyle \pm \frac{b}{s} \hat{\x
 The ES algotrithm adds the perturbation to its setpointto update its setpoint $\hat{\theta}$, giving the control value, $\theta$:
 
 <p align="center">
-  Continuous representation: $\theta = \hat{\theta} + a \sin \left( \omega t \right)$ $\quad$ | $\quad$ Discretized representation, indexed by $k$: $\theta_{k} = \hat{\theta}_{k} + a \sin \left( \omega k T \right)$
+Continuous representation: $\theta = \hat{\theta} + a \sin \left( \omega t \right)$ $\quad$ | $\quad$ Discretized representation, indexed by $k$: $\theta_{k} = \hat{\theta}_{k} + a \sin \left( \omega k T \right)$
 </p>
 
 ## <center> Extremum Seeking Gradient Estimation </center>
