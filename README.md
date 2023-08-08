@@ -50,8 +50,6 @@ The perturbation amplitude $a$ determines how far into the search space the pert
 #### Integrator Gain: $b$
 The integerator gain $b$ determines how far the ES algorithm will move in the direction of the gradient estimate. This value essentially scales the gradient estimate. This value can be though of as similar to the step size in gradient descent. Larger values generally provide faster convergence to an optimizer, but may lead to instability.
 
-### Parameters for Advanced ES
-
 #### High-pass filter frequency: $\omega_h$
 The high-pass filter frequency determines what frequency content passes through the high-pass filter. This value is typically set to $\omega_{h} = 0.1 \omega$, and SimpleES classes default to this value.
 
