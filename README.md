@@ -5,7 +5,7 @@ Extremum Seeking (ES) is a model-free, online or offline, optimization algorithm
 This project contains three implementations of extremum seeking, meant to be plug-and-play into simulations or real-world applications: 1D-ES, 2D-ES, ND-ES (multi-dimensional). Multiple ES instances of any type can be used in conjunction. Jupyter notebooks contain several simulation examples of the ES implementations on static and dynamic systems.
 
 
-## <center> ES Operation </center>
+## <center> Extremum Seeking Algorithm </center>
 
 This section covers the operation of a single 1D-ES algorithm.
 
